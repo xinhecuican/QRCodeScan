@@ -11,6 +11,10 @@
     {
       "name": "mainability_HelloWorld",
       "value": "Hello World"
+    },
+    {
+      "name": "premission_camera",
+      "value": "request permission for scan QRCode"
     }
   ]
 }

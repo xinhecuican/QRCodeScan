@@ -1,6 +1,8 @@
 package com.xinhecuican.qrcodescan;
 
 import com.xinhecuican.qrcodescan.slice.MainAbilitySlice;
+import com.xinhecuican.qrcodescan.utils.ScreenInfo;
+import com.xinhecuican.qrcodescan.widget.controller.CameraController;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import com.xinhecuican.qrcodescan.widget.controller.FormController;
@@ -27,6 +29,8 @@ public class MainAbility extends Ability {
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setMainRoute(MainAbilitySlice.class.getName());
+        getPermissions();
+        ScreenInfo.getScreenMetrics(this);
         if (intentFromWidget(intent)) {
             topWidgetSlice = getRoutePageSlice(intent);
             if (topWidgetSlice != null) {
@@ -124,6 +128,7 @@ public class MainAbility extends Ability {
                 break;
             }
         }
+        CameraController.getInstance().tryStartCamera(this);
     }
 
     private void getPermissions()

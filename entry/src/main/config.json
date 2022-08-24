@@ -40,6 +40,9 @@
         "formsEnabled": true,
         "label": "$string:entry_MainAbility",
         "type": "page",
+        "permissions": [
+          "ohos.permission.CAMERA"
+        ],
         "forms": [
           {
             "landscapeLayouts": [
@@ -66,7 +69,22 @@
       }
     ],
     "reqPermissions": [
-      {"name": "ohos.permission.CAMERA"}
-    ]
+      {
+        "name": "ohos.permission.CAMERA",
+        "reason": "$string:permission_camera",
+        "usedScene": {
+          "ability": ["com.xinhecuican.qrcodescan.MainAbility"],
+          "when": "always"
+        }
+      }
+    ],
+    "metaData": {
+      "customizeData": [
+        {
+          "name": "hwc-theme",
+          "value": "androidhwext:style/Theme.Emui.NoTitleBar"
+        }
+      ]
+    }
   }
 }

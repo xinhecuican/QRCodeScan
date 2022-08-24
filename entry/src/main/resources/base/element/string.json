@@ -23,6 +23,10 @@
     {
       "name": "widget_introduction",
       "value": "Introduction"
+    },
+    {
+      "name": "premission_camera",
+      "value": "request permission for scan QRCode"
     }
   ]
 }

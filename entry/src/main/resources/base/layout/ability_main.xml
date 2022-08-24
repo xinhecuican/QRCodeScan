@@ -1,19 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DirectionalLayout
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    xmlns:custom="http://schemas.huawei.com/res/custom"
     ohos:height="match_parent"
-    ohos:width="match_parent"
-    ohos:alignment="center"
-    ohos:orientation="vertical">
+    ohos:width="match_parent">
 
-    <Text
-        ohos:id="$+id:text_helloworld"
-        ohos:height="match_content"
-        ohos:width="match_content"
-        ohos:background_element="$graphic:background_ability_main"
-        ohos:layout_alignment="horizontal_center"
-        ohos:text="$string:mainability_HelloWorld"
-        ohos:text_size="40vp"
-        />
+    <DependentLayout
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:id="$+id:root_layout">
+
+        <DirectionalLayout
+            ohos:height="match_parent"
+            ohos:width="match_parent"
+            ohos:id="$+id:camera_layout"
+            />
+
+        <DirectionalLayout
+            ohos:height="match_parent"
+            ohos:width="match_parent">
+            <com.xinhecuican.qrcodescan.widget.widget.ViewMask
+                custom:rect_width="170vp"
+                custom:rect_height="170vp"
+                custom:line_color="#FF00CCFF"
+                ohos:height="match_parent"
+                ohos:width="match_parent"/>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="match_parent"
+            ohos:width="match_parent"
+            ohos:id="$+id:animation_layout">
+            <com.xinhecuican.qrcodescan.widget.widget.AnimationLine
+                ohos:width="match_parent"
+                ohos:height="match_parent"
+                custom:rect_width="170vp"
+                custom:rect_height="170vp"
+                custom:line_color="#FF00CCFF"
+                ohos:id="$+id:animation_line"/>
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:id="$+id:statusbar"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:bottom_margin="30vp"
+            ohos:orientation="horizontal"
+            ohos:align_parent_bottom="true">
+            <DirectionalLayout
+                ohos:height="match_parent"
+                ohos:width="match_parent"
+                ohos:weight="1">
+                <Button
+                    ohos:id="$+id:flash_button"
+                    ohos:height="120px"
+                    ohos:width="match_content"
+                    ohos:enabled="false"
+                    ohos:layout_alignment="center"
+                    ohos:scale_mode="center"
+                    ohos:element_start="$media:flashlight"
+                    ohos:background_element="$graphic:background_button"
+                    ohos:padding="10vp"/>
+            </DirectionalLayout>
+
+            <DirectionalLayout
+                ohos:height="match_parent"
+                ohos:width="match_parent"
+                ohos:weight="1">
+                <Button
+                    ohos:id="$+id:picture_button"
+                    ohos:height="120px"
+                    ohos:width="match_content"
+                    ohos:enabled="false"
+                    ohos:layout_alignment="center"
+                    ohos:scale_mode="center"
+                    ohos:element_end="$media:picture"
+                    ohos:background_element="$graphic:background_button"
+                    ohos:padding="10vp"/>
+            </DirectionalLayout>
+        </DirectionalLayout>
+
+    </DependentLayout>
 
 </DirectionalLayout>

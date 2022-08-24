@@ -3,12 +3,23 @@ apply plugin: 'com.huawei.ohos.app'
 
 //For instructions on signature configuration, see https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide_debug_device-0000001053822404#ZH-CN_TOPIC_0000001154985555__section1112183053510
 ohos {
-    compileSdkVersion 5
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\HP\\.ohos\\config\\auto_debug_qrcodescan_70086000219663622.p12')
+            storePassword '0000001A9F1C4B804B9B5A79BAAC2575ECD2F13911C2F972BF4DAB8FDB13C9835D87234339B37A903EA2'
+            keyAlias = 'debugKey'
+            keyPassword '0000001A3CCF93F0EB0A7291B2827917AD0E4B61306AA7E4019B3EB379A41B3237E223BF73943FA2C3A7'
+            signAlg = 'SHA256withECDSA'
+            profile file('C:\\Users\\HP\\.ohos\\config\\auto_debug_qrcodescan_70086000219663622.p7b')
+            certpath file('C:\\Users\\HP\\.ohos\\config\\auto_debug_qrcodescan_70086000219663622.cer')
+        }
+    }
+    compileSdkVersion 6
     defaultConfig {
         compatibleSdkVersion 5
     }
 }
-	
+
 buildscript {
     repositories {
         maven {
@@ -17,11 +28,11 @@ buildscript {
         maven {
             url 'https://developer.huawei.com/repo/'
         }
-		jcenter()
+        jcenter()
     }
     dependencies {
-        classpath 'com.huawei.ohos:hap:2.4.4.2'
-        classpath 'com.huawei.ohos:decctest:1.2.4.0'
+        classpath 'com.huawei.ohos:hap:3.0.5.11'
+        classpath 'com.huawei.ohos:decctest:1.2.7.9'
     }
 }
 
@@ -33,6 +44,6 @@ allprojects {
         maven {
             url 'https://developer.huawei.com/repo/'
         }
-		jcenter()
+        jcenter()
     }
 }

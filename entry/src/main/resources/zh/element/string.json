@@ -11,6 +11,10 @@
     {
       "name": "mainability_HelloWorld",
       "value": "你好，世界"
+    },
+    {
+      "name": "permission_camera",
+      "value": "申请相机权限以扫描二维码"
     }
   ]
 }
